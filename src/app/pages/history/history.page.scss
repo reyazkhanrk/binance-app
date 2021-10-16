@@ -1,0 +1,21 @@
+.home-container{
+  padding:5%;
+  .balance{
+    border-radius: 10px;
+    background: linear-gradient(180deg,hsla(0,0%,100%,.555),rgba(152,240,240,.699));
+    box-shadow: 0 2px 3px rgb(0 0 0 / 17%);
+    padding: 2% 3%;
+    margin:0 0 3% 0;
+    .comboBtn{
+      display: flex;
+      justify-content: space-between;
+      button{
+        font-size:smaller;
+      }
+    }
+  }
+}
+
+.table-parent{
+  font-size: x-small;
+}

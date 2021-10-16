@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="https://cryptologos.cc/logos/thumbs/komodo.png?v=013" alt="">
+        <h3>Crypto</h3>
+      </div>
+      <ion-menu-button></ion-menu-button>
+    </div>
+    </ion-toolbar>
+ </ion-header>
+
+<ion-menu side="end" contentId="main">
+  <ion-header class="menu-header">
+    <div class="menu-toolbar">
+      <i class="ri-close-circle-line" (click)="openEnd()"></i>
+    </div>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goToPage('home')">Home</ion-item>
+      <ion-item (click)="goToPage('history')">History</ion-item>
+      <ion-item>Message</ion-item>
+      <ion-item>Balance</ion-item>
+      <ion-item (click)="goToPage('login')">Logout</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>

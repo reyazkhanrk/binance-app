@@ -1,0 +1,44 @@
+
+<ion-content>
+  <div class="signIn">
+    <div class="left">
+      <h1>Sign Up</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()" novalidate>
+          <div class="input-group mb-3" [ngClass]="{'error':registerForm.get('username').invalid && isSubmitted}">
+            <span class="input-group-text"><i class="ri-user-fill"></i></span>
+            <input type="text" class="form-control shadow-none" placeholder="Username" formControlName="username" >
+          </div>
+          <div class="input-group mb-3" [ngClass]="{'error':registerForm.get('password').invalid && isSubmitted}">
+            <span class="input-group-text"><i class="ri-lock-fill"></i></span>
+            <input type="password" formControlName="password" class="form-control shadow-none" placeholder="Password">
+          </div>
+          <div class="input-group mb-3" [ngClass]="{'error':registerForm.get('confirmPassword').invalid && isSubmitted}">
+            <span class="input-group-text"><i class="ri-lock-fill"></i></span>
+            <input type="password" formControlName="confirmPassword" class="form-control shadow-none" placeholder="Confirm Password">
+          </div>
+          <div style="height:100px;">
+            <ngx-recaptcha2 #captchaElem
+              [siteKey]="siteKey"
+              formControlName="recaptcha">
+            </ngx-recaptcha2>
+          </div>
+          <div class="btn-group">
+            <div>
+              <button type="submit" class="btn btn-login">Register</button>
+            </div>
+            <div>
+              <button class="btn btn-google ml-30" (click)="loginWithGoogle()">
+                <img width="16px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                Login with Google
+              </button>
+            </div>
+          </div>
+        </form>
+        <h4 class="info-message">Have an account already ? Please go to <a routerLink='/login'>Login</a></h4>
+        <div>
+          <img src="assets/signin-image.jpg" alt="">
+        </div>
+    </div>
+  </div>
+</ion-content>
+
